@@ -9,29 +9,29 @@
         <link rel="stylesheet" href="style.css" />
       </head>
       <body>
-        <div id="div1">
-          <h2>Can you guess my number?</h2>
-          <h2>Let me help you, it is between 1 and 20.</h2>
-        </div>
-        <div id="div2">
-          <h2 id="answer">Your best guess:</h2>
-          <!-- <form id="form" onsubmit="return false;">
-            <input type="number" id="num" />
-            <input type="submit" onclick="checkNum();" />
-          </form> -->
-          <input
-            class="vertical-center"
-            type="number"
-            id="num"
-            name="num"
-            min="1"
-            max="20"
-          />
-          <br /><br />
-          <button class="vertical-center" id="check">Check</button>
-          <h2 id="try">Try it</h2>
-          <button class="vertical-center" id="reset">Play again</button>
-        </div>
+        <header id="header">
+          <p>Can you guess my number?</p>
+          <p>Let me help you, it is between 1 and 20.</p>
+        </header>
+        <main id="main">
+          <section class="left">
+            <!-- <div id="div2"> -->
+            <p id="answer">Your best guess:</p>
+            <input type="number" id="num" name="num" min="1" max="20" />
+            <br /><br />
+            <button id="check">Check</button>
+            <p id="try">Try it</p>
+            <button id="reset">Play again</button>
+            <!-- </div> -->
+          </section>
+          <section class="right">
+            <p class="message">Start guessing...</p>
+            <p class="label-score">💯 Score: <span class="score">20</span></p>
+            <p class="label-highscore">
+              🥇 Highscore: <span class="highscore">0</span>
+            </p>
+          </section>
+        </main>
         <script src="script.js"></script>
       </body>
     </html>
