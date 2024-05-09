@@ -17,7 +17,7 @@ setNumber();
 function compare() {
   if (!inputNum) {
     displayText("answer", `You should input a number`);
-  } else if (inputNum != seacretNum) {
+  } else if (inputNum !== seacretNum) {
     if (score > 1) {
       displayText(
         "answer",
@@ -27,7 +27,10 @@ function compare() {
       );
       score--;
       displayText("score", score);
+      displayText("message", `Keep guessing...`);
     } else {
+      score--;
+      displayText("score", score);
       // set html text
       displayText("message", `You lost! Play again?`);
       // set css style
@@ -40,13 +43,11 @@ function compare() {
       `Your guess ${inputNum} is spot on, my number is also ${seacretNum}`
     );
     displayText("message", "Play again?");
-    //document.getElementById("message").innerText = `Play again?`;
     // set css style
     document.getElementById("main").style.backgroundColor = "rgb(0, 255, 13)";
     if (highScore < score) {
       highScore = score;
       displayText("highscore", highScore);
-      //document.getElementById("highscore").innerText = highScore;
     }
   }
 }
@@ -58,11 +59,8 @@ document.getElementById("reset").addEventListener("click", function () {
   setNumber();
   score = 20;
   displayText("answer", `Your best guess:`);
-  //document.getElementById("answer").innerText = `Your best guess:`;
   document.getElementById("main").style.backgroundColor = "blue";
   document.getElementById("num").value = null;
   displayText("score", score);
-  //document.getElementById("score").innerText = score;
   displayText("message", `Start guessing...`);
-  //document.getElementById("message").innerText = `Start guessing...`;
 });
